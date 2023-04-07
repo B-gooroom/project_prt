@@ -11,3 +11,5 @@ public interface DashboardRepository {
 //    (select * from lxNoticeAdmin)
     List<Dashboard> read();
 }
+
+

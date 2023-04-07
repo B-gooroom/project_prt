@@ -17,15 +17,8 @@ public class DashboardSerivce {
         this.dashboardRepository = dashboardRepository;
     }
 
-//    @Autowired
-//    private DashboardRepository;
-
-//    @Autowired
-//    public DashboardSerivce(DashboardRepository dashboardRepository) {
-//        this.dashboardRepository = dashboardRepository;
-//    }
-
     public List<Dashboard> read() {
         return dashboardRepository.read();
     }
+
 }
