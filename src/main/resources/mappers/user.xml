@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.prt.partners.repositories.UserRepository">
+    <select id="read" resultType="User">
+        select * from prtUser
+    </select>
+    <!--    <insert id="create" parameterType="User">-->
+    <!--        insert into lwUser(user_id, user_name)-->
+    <!--        values(#{userId}, #{userName})-->
+    <!--    </insert>-->
+    <!--    <delete id="delete" parameterType="Integer">-->
+    <!--        delete from lwUser-->
+    <!--        where user_no = #{userNo}-->
+    <!--    </delete>-->
+    <!--    <update id="update">-->
+    <!--        update lwUser set user_id = #{userId}, user_name = #{userName}-->
+    <!--        where user_no = #{userNo}-->
+    <!--    </update>-->
+</mapper>

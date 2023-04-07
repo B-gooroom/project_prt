@@ -19,9 +19,7 @@ dependencies {
 	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
 	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	implementation 'mysql:mysql-connector-java:8.0.31' //기존 버전
-//	implementation 'mysql:mysql-connector-java:8.0.15' //다운그레이드 버전
-	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.4.1'
+	implementation 'mysql:mysql-connector-java:8.0.31'
 	implementation 'com.jcraft:jsch:0.1.55'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
