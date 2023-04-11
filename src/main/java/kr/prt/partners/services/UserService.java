@@ -20,4 +20,21 @@ public class UserService {
     public List<User> userRead() {
         return userRepository.read();
     }
+
+    public List<User> find(Integer userNo) {
+        return userRepository.find(userNo);
+    }
+
+    public Integer create(User user) {
+        return userRepository.create(user);
+    }
+
+    public Integer delete(Integer userPk) {
+        return userRepository.delete(userPk);
+    }
+
+//    public Integer update(Integer userPk, String user_name) {
+    public Integer update(Integer userPk, User user) {
+        return userRepository.update(userPk, user);
+    }
 }
