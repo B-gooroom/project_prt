@@ -5,16 +5,20 @@
     <select id="read" resultType="User">
         select * from prtUser
     </select>
-    <!--    <insert id="create" parameterType="User">-->
-    <!--        insert into lwUser(user_id, user_name)-->
-    <!--        values(#{userId}, #{userName})-->
-    <!--    </insert>-->
-    <!--    <delete id="delete" parameterType="Integer">-->
-    <!--        delete from lwUser-->
-    <!--        where user_no = #{userNo}-->
-    <!--    </delete>-->
-    <!--    <update id="update">-->
-    <!--        update lwUser set user_id = #{userId}, user_name = #{userName}-->
-    <!--        where user_no = #{userNo}-->
-    <!--    </update>-->
+    <select id="find" resultType="User">
+        select * from prtUser
+        where user_no = #{user_no}
+    </select>
+    <insert id="create" parameterType="User">
+        insert into prtUser(user_id, user_name)
+        values(#{user_id}, #{user_name})
+    </insert>
+    <delete id="delete" parameterType="Integer">
+        delete from prtUser
+        where user_no = #{user_no}
+    </delete>
+    <update id="update">
+        update prtUser set user_name = #{user_name}
+        where user_no = #{user_no}
+    </update>
 </mapper>
