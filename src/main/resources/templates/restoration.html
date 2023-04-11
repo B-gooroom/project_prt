@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="'http://www.thymeleaf.org">
+<head>
+    <title>견적조회</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div>
+        <h3>견적 정보</h3>
+        <!--        <p th:text="'hello~ ' + ${users}">hello! empty</p>-->
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>이름</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="res : ${reses}">
+                <td th:text="${res.rstr_no}"></td>
+                <td th:text="${res.category_top}"></td>
+                <td th:text="${res.category_base}"></td>
+                <td th:text="${res.brand_no}"></td>
+                <td th:text="${res.brand_name}"></td>
+                <td th:text="${res.note}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

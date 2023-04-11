@@ -8,9 +8,26 @@
 <div class="container">
     <div>
         <h3>dashboard 정보</h3>
-
-        <p th:text="'hello~ ' + ${board}">hello! empty</p>
+<!--        <p th:text="'hello~ ' + ${board}">hello! empty</p>-->
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>이름</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="board : ${boards}">
+                <td th:text="${board.board_no}"></td>
+                <td th:text="${board.board_seq}"></td>
+                <td th:text="${board.subject}"></td>
+                <td th:text="${board.content}"></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
+
+<!--    <span th:text="${board}">${board}</span>-->
 </div>
 </body>
 </html>

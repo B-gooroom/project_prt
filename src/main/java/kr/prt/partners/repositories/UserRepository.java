@@ -2,6 +2,7 @@ package kr.prt.partners.repositories;
 
 import kr.prt.partners.models.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -9,4 +10,15 @@ import java.util.List;
 public interface UserRepository {
 
     List<User> read();
+
+    List<User> find(Integer userNo);
+
+    Integer create(User user);
+
+    Integer delete(Integer userPk);
+
+//    Integer update(Integer userPk, String user_name);
+    Integer update(Integer userPk, User user);
+//    Integer update(@Param("userPk") Integer userPk, @Param("user_name") String user_name);
+
 }
