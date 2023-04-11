@@ -22,9 +22,9 @@ public class BoardController {
 //    public void memberRegi(Locale locale, Model model, String userName, MemberDto dto) {
     @GetMapping("/dashboard/list")
     public String DashboardRe(Model model) {
-        List<Dashboard> board = dashboardSerivce.read();
-        System.out.println(board);
-        model.addAttribute("board", board);
+        List<Dashboard> boards = dashboardSerivce.read();
+        System.out.println(boards);
+        model.addAttribute("boards", boards);
         return "dashboard/list";
     }
 

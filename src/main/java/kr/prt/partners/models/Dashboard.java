@@ -5,48 +5,48 @@ import java.time.LocalDateTime;
 
 public class Dashboard {
 
-    private Integer baord_no;
-    private Integer baord_seq;
-    private Integer baord_cat;
+    private Integer board_no;
+    private Integer board_seq;
+    private Integer board_cat;
     private BigInteger num;
     private String subject;
     private String content;
 
-    public Dashboard(Integer baord_no) {
-        this.baord_no = baord_no;
+    public Dashboard(Integer board_no) {
+        this.board_no = board_no;
     }
 
-    public Dashboard(Integer baord_no, Integer baord_seq, Integer baord_cat, BigInteger num, String subject, String content) {
-        this.baord_no = baord_no;
-        this.baord_seq = baord_seq;
-        this.baord_cat = baord_cat;
+    public Dashboard(Integer board_no, Integer board_seq, Integer board_cat, BigInteger num, String subject, String content) {
+        this.board_no = board_no;
+        this.board_seq = board_seq;
+        this.board_cat = board_cat;
         this.num = num;
         this.subject = subject;
         this.content = content;
     }
 
-    public Integer getBaord_no() {
-        return baord_no;
+    public Integer getBoard_no() {
+        return board_no;
     }
 
-    public void setBaord_no(Integer baord_no) {
-        this.baord_no = baord_no;
+    public void setBoard_no(Integer board_no) {
+        this.board_no = board_no;
     }
 
-    public Integer getBaord_seq() {
-        return baord_seq;
+    public Integer getBoard_seq() {
+        return board_seq;
     }
 
-    public void setBaord_seq(Integer baord_seq) {
-        this.baord_seq = baord_seq;
+    public void setBoard_seq(Integer board_seq) {
+        this.board_seq = board_seq;
     }
 
-    public Integer getBaord_cat() {
-        return baord_cat;
+    public Integer getBoard_cat() {
+        return board_cat;
     }
 
-    public void setBaord_cat(Integer baord_cat) {
-        this.baord_cat = baord_cat;
+    public void setBoard_cat(Integer board_cat) {
+        this.board_cat = board_cat;
     }
 
     public BigInteger getNum() {
