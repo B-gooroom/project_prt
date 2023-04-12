@@ -3,20 +3,23 @@ package kr.prt.partners.models;
 public class Restoration {
 
     private Integer rstr_no;
+    private String state;
     private Integer category_top;
     private Integer category_base;
     private Integer brand_no;
     private String brand_name;
     private String note;
+    private String use_yn;
 
-
-    public Restoration(Integer rstr_no, Integer category_top, Integer category_base, Integer brand_no, String brand_name, String note) {
+    public Restoration(Integer rstr_no, String state, Integer category_top, Integer category_base, Integer brand_no, String brand_name, String note, String use_yn) {
         this.rstr_no = rstr_no;
+        this.state = state;
         this.category_top = category_top;
         this.category_base = category_base;
         this.brand_no = brand_no;
         this.brand_name = brand_name;
         this.note = note;
+        this.use_yn = use_yn;
     }
 
     public Integer getRstr_no() {
@@ -25,6 +28,14 @@ public class Restoration {
 
     public void setRstr_no(Integer rstr_no) {
         this.rstr_no = rstr_no;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public Integer getCategory_top() {
@@ -65,5 +76,13 @@ public class Restoration {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public String getUse_yn() {
+        return use_yn;
+    }
+
+    public void setUse_yn(String use_yn) {
+        this.use_yn = use_yn;
     }
 }
