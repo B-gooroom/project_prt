@@ -15,10 +15,10 @@ public interface UserRepository {
 
     Integer create(User user);
 
-    Integer delete(Integer userPk);
+    Integer delete(Integer userNo);
 
 //    Integer update(Integer userPk, String user_name);
-    Integer update(Integer userPk, User user);
-//    Integer update(@Param("userPk") Integer userPk, @Param("user_name") String user_name);
+//    Integer update(Integer userPk, User user);
+    Integer update(@Param("user_no") Integer userNo, @Param("user_name") String user_name);
 
 }

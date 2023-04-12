@@ -29,12 +29,11 @@ public class UserService {
         return userRepository.create(user);
     }
 
-    public Integer delete(Integer userPk) {
-        return userRepository.delete(userPk);
+    public Integer delete(Integer userNo) {
+        return userRepository.delete(userNo);
     }
 
-//    public Integer update(Integer userPk, String user_name) {
-    public Integer update(Integer userPk, User user) {
-        return userRepository.update(userPk, user);
+    public Integer update(Integer userNo, String user_name) {
+        return userRepository.update(userNo, user_name);
     }
 }
