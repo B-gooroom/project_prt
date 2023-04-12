@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.prt.partners.repositories.NotificationRepository">
+    <select id="read" resultType="Notification">
+        SELECT *
+        FROM prtNotification
+        WHERE flag_read = "Y"
+    </select>
+    <select id="unread" resultType="Notification">
+        SELECT *
+        FROM prtNotification
+        WHERE flag_read = "N"
+    </select>
+    <update id="readNoti">
+        UPDATE prtNotification
+        SET flag_read = "Y"
+        WHERE noti_no = #{noti_no}
+    </update>
+    <update id="allRead">
+        UPDATE prtNotification
+        SET flag_read = "Y"
+        WHERE flag_read = "N"
+    </update>
+</mapper>

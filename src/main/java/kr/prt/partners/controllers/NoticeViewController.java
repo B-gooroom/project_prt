@@ -21,7 +21,7 @@ public class NoticeViewController {
 //    @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
 //    public void memberRegi(Locale locale, Model model, String userName, MemberDto dto) {
     @GetMapping("/notice/view")
-    public String DashboardRe(Model model) {
+    public String NoticeView(Model model) {
         List<Notice> boards = noticeSerivce.read();
         System.out.println(boards);
         model.addAttribute("boards", boards);
