@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
-public class ListRestorationController {
+public class RestorationViewController {
 
     @Autowired
     private RestorationService restorationService;
 
-    public ListRestorationController(RestorationService restorationService) {
+    public RestorationViewController(RestorationService restorationService) {
         this.restorationService = restorationService;
     }
 
-    @GetMapping("/restoration")
+    @GetMapping("/restoration/view")
     public String restoration(Model model) {
         List<Restoration> restorations = restorationService.listResRead();
         System.out.println(restorations);
         model.addAttribute("reses", restorations);
-        return "/restoration";
+        return "/restoration/view";
     }
 }

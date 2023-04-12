@@ -1,15 +1,15 @@
 package kr.prt.partners.repositories;
 
-import kr.prt.partners.models.Dashboard;
+import kr.prt.partners.models.Notice;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 @Mapper
-public interface DashboardRepository {
+public interface NoticeRepository {
 
 //    (select * from lxNoticeAdmin)
-    List<Dashboard> read();
+    List<Notice> read();
 }
 
 

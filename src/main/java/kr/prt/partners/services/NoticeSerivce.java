@@ -1,23 +1,23 @@
 package kr.prt.partners.services;
 
-import kr.prt.partners.models.Dashboard;
-import kr.prt.partners.repositories.DashboardRepository;
+import kr.prt.partners.models.Notice;
+import kr.prt.partners.repositories.NoticeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class DashboardSerivce {
+public class NoticeSerivce {
 
 
-    private final DashboardRepository dashboardRepository;
+    private final NoticeRepository dashboardRepository;
     @Autowired
-    public DashboardSerivce(DashboardRepository dashboardRepository) {
+    public NoticeSerivce(NoticeRepository dashboardRepository) {
         this.dashboardRepository = dashboardRepository;
     }
 
-    public List<Dashboard> read() {
+    public List<Notice> read() {
         return dashboardRepository.read();
     }
 

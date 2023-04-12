@@ -18,7 +18,8 @@
         where user_no = #{user_no}
     </delete>
     <update id="update">
-        update prtUser set user_name = #{user_name}
+        update prtUser
+        set user_name = #{user_name}
         where user_no = #{user_no}
     </update>
 </mapper>

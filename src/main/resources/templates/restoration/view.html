@@ -7,21 +7,20 @@
 <body>
 <div class="container">
     <div>
-        <h3>견적 정보</h3>
-        <!--        <p th:text="'hello~ ' + ${users}">hello! empty</p>-->
+        <h3>restoration: 견적 리스트(대기)</h3>
         <table>
             <thead>
             <tr>
                 <th>#</th>
-                <th>이름</th>
+                <th>state</th>
+                <th>brand_name</th>
+                <th>note</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="res : ${reses}">
                 <td th:text="${res.rstr_no}"></td>
-                <td th:text="${res.category_top}"></td>
-                <td th:text="${res.category_base}"></td>
-                <td th:text="${res.brand_no}"></td>
+                <td th:text="${res.state}"></td>
                 <td th:text="${res.brand_name}"></td>
                 <td th:text="${res.note}"></td>
             </tr>
