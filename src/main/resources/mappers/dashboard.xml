@@ -10,6 +10,7 @@
     <select id="notification" resultType="Dashboard">
         SELECT COUNT(*)
         FROM prtNotification
+        WHERE flag_read = "N"
     </select>
     <select id="notice" resultType="Dashboard">
         SELECT COUNT(*)
