@@ -24,6 +24,6 @@ public class RestorationViewController {
         List<Restoration> restorations = restorationService.listResRead();
         System.out.println(restorations);
         model.addAttribute("reses", restorations);
-        return "/restoration/view";
+        return "restoration/view";
     }
 }

@@ -89,7 +89,7 @@ public class DashboardViewController {
         result.put("ongoing", ongoing.get(0).getCount());
         System.out.println(result);
         model.addAttribute("dash", result);
-        return "/dashboard";
+        return "dashboard";
     }
 
 }

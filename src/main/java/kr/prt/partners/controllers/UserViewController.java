@@ -23,6 +23,6 @@ public class UserViewController {
         List<User> users = userService.userRead();
         System.out.println(users);
         model.addAttribute("users", users);
-        return "/user/view";
+        return "user/view";
     }
 }
