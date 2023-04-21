@@ -25,7 +25,7 @@ public class NoticeViewController {
         List<Notice> boards = noticeSerivce.read();
         System.out.println(boards);
         model.addAttribute("boards", boards);
-        return "/notice/view";
+        return "notice/view";
     }
 
 }
