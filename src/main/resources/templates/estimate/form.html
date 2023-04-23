@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="'http://www.thymeleaf.org">
+<head>
+    <title>견적 조회</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div>
+        <h3>estimate: 견적 조회{id}</h3>
+        <div>
+            <form action="/estimate/new/{rstr}" method="post">
+                <div class="form-group">
+                    <label for='rstr'>id</label>
+                    <input type="text" id="rstr" name="rstr" placeholder="이름을 입력하세요">
+                </div>
+                <button type="submit">등록</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

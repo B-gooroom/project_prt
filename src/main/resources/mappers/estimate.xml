@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.prt.partners.repositories.EstimateRepository">
+    <select id="readList" resultType="Estimate">
+        SELECT *
+        from prtRestoration
+        WHERE (state = "SRQE" OR state = "SRSE")
+            AND use_yn = "Y"
+    </select>
+    <select id="readId" resultType="Estimate">
+        SELECT *
+        from prtRestoration
+        WHERE rstr_no = #{rstr_no}
+    </select>
+    <insert id="create" parameterType="Estimate">
+        INSERT INTO prtRestorationEstimate(rstr_no, state, note, contract_yn)
+        VALUES (#{rstr_no}, #{state}, #{note}, #{contract_yn})
+    </insert>
+</mapper>
+        <!--            input_day,-->
+        <!--            work_price-->
+        <!--            #{input_day},-->
+        <!--            #{work_price}-->

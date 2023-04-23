@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="'http://www.thymeleaf.org">
+<head>
+    <title>견적 조회</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div>
+        <h3>estimate: 견적 조회</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>이름</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="list : ${estimateList}">
+                <td th:text="${list.rstr_no}"></td>
+                <td th:text="${list.category_top}"></td>
+                <td th:text="${list.category_base}"></td>
+                <td th:text="${list.brand_name}"></td>
+                <td th:text="${list.note}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
