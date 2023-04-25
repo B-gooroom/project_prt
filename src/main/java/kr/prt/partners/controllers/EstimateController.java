@@ -39,15 +39,13 @@ public class EstimateController {
     }
 
     @RequestMapping(path = "/estimate", method = RequestMethod.POST)
-    public EstimateResponse create(Integer rstr_no, String note, String contract_yn) {
+    public EstimateResponse create(Integer rstr_no, String note, Integer input_day, Integer price) {
 //        estimateService.insert(rstr_no, state, note);
         List<Estimate> lists = estimateService.readId(rstr_no);
-        System.out.println(rstr_no);
-        System.out.println(lists.get(0).getState());
-        System.out.println(note);
-        System.out.println(contract_yn);
-        estimateService.create(rstr_no, lists.get(0).getState(), note, contract_yn);
-//        System.out.println(rstr_no, state, note);
+//        System.out.println(lists.get(0).getState());
+//        System.out.println(lists.get(0));
+        Integer work_day = input_day + 7;
+        estimateService.create(rstr_no, lists.get(0).getState(), note, input_day, price, work_day);
         return new EstimateResponse(lists);
     }
 

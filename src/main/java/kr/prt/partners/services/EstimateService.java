@@ -1,6 +1,7 @@
 package kr.prt.partners.services;
 
 import kr.prt.partners.models.Estimate;
+import kr.prt.partners.models.Suggest;
 import kr.prt.partners.repositories.EstimateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,17 +25,17 @@ public class EstimateService {
         return estimateRepository.readId(rstrNo);
     }
 
-    public Integer create(Integer rstr_no, String state, String note, String contract_yn) {
-//        return estimateRepository.insert(rstr_no, state, note);
-//        System.out.println(rstr_no);
-//        System.out.println(state);
-//        System.out.println(note);
-//        System.out.println(contract_yn);
-        return estimateRepository.create(rstr_no, state, note, contract_yn);
+    public Integer create(Integer rstr_no, String state, String note, Integer input_day, Integer price, Integer work_day) {
+        return estimateRepository.create(rstr_no, state, note, input_day, price, work_day);
     }
-//    public Integer create(Estimate estimate) {
-//        System.out.println(estimate);
-//        return estimateRepository.create(estimate);
-//    }
+
+    public List<Suggest> readEstimateList() {
+        return estimateRepository.readEstimateList();
+    }
+
+    public List<Suggest> readEstimate(Integer estimate_no) {
+//        System.out.println(estimate_no);
+        return estimateRepository.readEstimate(estimate_no);
+    }
 
 }

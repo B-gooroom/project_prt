@@ -4,20 +4,32 @@
 <mapper namespace="kr.prt.partners.repositories.EstimateRepository">
     <select id="readList" resultType="Estimate">
         SELECT *
-        from prtRestoration
+        FROM prtRestoration
         WHERE (state = "SRQE" OR state = "SRSE")
             AND use_yn = "Y"
     </select>
     <select id="readId" resultType="Estimate">
         SELECT *
-        from prtRestoration
+        FROM prtRestoration
         WHERE rstr_no = #{rstr_no}
     </select>
     <insert id="create" parameterType="Estimate">
-        INSERT INTO prtRestorationEstimate(rstr_no, state, note, contract_yn)
-        VALUES (#{rstr_no}, #{state}, #{note}, #{contract_yn})
+        INSERT INTO prtRestorationEstimate(rstr_no, state, note, contract_yn, input_day, work_price, work_day)
+        VALUES (#{rstr_no}, #{state}, #{note}, "N", #{input_day}, #{price}, #{work_day})
     </insert>
+    <select id="readEstimateList" resultType="Suggest">
+        SELECT estimate_no, rstr_no, state, note, input_day, work_price, register_time
+        FROM prtRestorationEstimate
+        WHERE use_yn = "Y"
+    </select>
+    <select id="readEstimate" resultType="Suggest">
+        SELECT estimate_no, rstr_no, state, note, input_day, work_price, register_time
+        FROM prtRestorationEstimate
+        WHERE estimate_no = #{estimate_no}
+    </select>
 </mapper>
+<!--TODO: (readEstimate) *로 받으면 register_time이 type 에러.. java.lang.Integer 어쩌구-->
+<!--        estimate_no, rstr_no, state, note, input_day, work_price, register_time-->
         <!--            input_day,-->
         <!--            work_price-->
         <!--            #{input_day},-->

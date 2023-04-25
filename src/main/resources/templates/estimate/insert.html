@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="'http://www.thymeleaf.org">
+<head>
+    <title>견적 조회</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div>
+        <h3>estimate: 견적 생성 insert</h3>
+        <div>
+            <form action="/estimate/insertnew/{rstr}" method="post">
+                <div class="form-group">
+                    <label for="rstr">rstr_no</label>
+                    <input type="text" id="rstr" name="rstr" placeholder="rstr_no">
+                    <label for="note">노트</label>
+                    <input type="text" id="note" name="note" placeholder="견적 내용">
+                    <label for="input_day">견적일</label>
+                    <input type="text" id="input_day" name="input_day" placeholder="견적일">
+                    <label for="price">견적금액</label>
+                    <input type="text" id="price" name="price" placeholder="견적 금액">
+<!--                    <label for='contract'>확정?</label>-->
+<!--                    <input type="text" id="contract" name="contract" placeholder="확정 내용">-->
+                    <button type="submit">등록</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
