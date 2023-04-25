@@ -21,10 +21,39 @@
                 <td th:text="${user.user_no}"></td>
                 <td th:text="${user.user_id}"></td>
                 <td th:text="${user.user_name}"></td>
+                <td>
+                    <button type="button"
+                            th:userNo="${user.user_no}"
+                            th:onClick="isCheck(this.getAttribute('userNo'))">클릭
+                    </button>
+                </td>
             </tr>
             </tbody>
         </table>
     </div>
+<!--    checkbox-->
+<!--    <div>-->
+<!--        <label>-->
+<!--            <input type="checkbox" id="my_checkbox" onclick="isCheck()">체크박스-->
+<!--        </label>-->
+<!--        <pre id="result"></pre>-->
+<!--    </div>-->
 </div>
 </body>
+<!--javascript-->
+<!--<script th:inline="javascript">-->
+<!--    function isCheck(index) {-->
+<!--        console.log(index);-->
+<!--        localStorage.setItem("id", `${index}`);-->
+<!--        // const checkbox = document.getElementById('my_checkbox');-->
+<!--        // const check = checkbox.checked;-->
+<!--        // document.getElementById("result").innerText = check;-->
+<!--    }-->
+<!--</script>-->
+<!--java-->
+<script>
+    function isCheck(index) {
+        localStorage.setItem("id", `${index}`);
+    }
+</script>
 </html>
