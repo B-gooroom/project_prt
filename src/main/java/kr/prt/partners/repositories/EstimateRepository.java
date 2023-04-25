@@ -1,6 +1,7 @@
 package kr.prt.partners.repositories;
 
 import kr.prt.partners.models.Estimate;
+import kr.prt.partners.models.Suggest;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -13,6 +14,10 @@ public interface EstimateRepository {
 
     List<Estimate> readId(Integer rstrNo);
 
-    Integer create(@Param("rstr_no") Integer rstr_no, @Param("state") String state, @Param("note") String note, @Param("contract_yn") String contract_yn);
-//    Integer create(Estimate estimate);
+    Integer create(@Param("rstr_no") Integer rstr_no, @Param("state") String state, @Param("note") String note,
+                   @Param("input_day") Integer input_day, @Param("price") Integer price, @Param("work_day") Integer work_day);
+
+    List<Suggest> readEstimateList();
+
+    List<Suggest> readEstimate(Integer estimate_no);
 }

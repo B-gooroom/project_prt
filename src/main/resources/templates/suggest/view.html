@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="'http://www.thymeleaf.org">
+<head>
+    <title>견적 조회</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div>
+        <h3>suggest: 제안 견적 조회</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>견적번호</th>
+                <th>상태</th>
+                <th>제안내용</th>
+                <th>제안날짜</th>
+                <th>제안금액</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="list : ${suggestList}">
+                <td th:text="${list.estimate_no}"></td>
+                <td th:text="${list.rstr_no}"></td>
+                <td th:text="${list.state}"></td>
+                <td th:text="${list.note}"></td>
+                <td th:text="${list.input_day} + 일"></td>
+                <td th:text="${list.work_price} + 원"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
