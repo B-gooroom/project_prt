@@ -11,4 +11,8 @@ public class RestorationResponse {
         this.result = result;
         this.lists = lists;
     }
+
+    public RestorationResponse(String result) {
+        this.result = result;
+    }
 }

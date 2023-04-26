@@ -34,4 +34,10 @@ public class RestorationController {
         return new RestorationResponse("read", lists);
     }
 
+    @RequestMapping(path = "/restoration", method = RequestMethod.POST)
+    public RestorationResponse create(Integer category_top, Integer category_base, Integer brand_no, String brand_name, String note, Integer id) {
+        restorationService.create(category_top, category_base, brand_no, brand_name, note, id);
+        return new RestorationResponse("create");
+    }
+
 }
