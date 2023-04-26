@@ -11,8 +11,9 @@ public class Estimate {
     private String brand_name;
     private String note;
     private String use_yn;
+    private Integer refuse_cnt;
 
-    public Estimate(Integer rstr_no, String state, Integer user_no, Integer category_top, Integer category_base, Integer brand_no, String brand_name, String note, String use_yn) {
+    public Estimate(Integer rstr_no, String state, Integer user_no, Integer category_top, Integer category_base, Integer brand_no, String brand_name, String note, String use_yn, Integer refuse_cnt) {
         this.rstr_no = rstr_no;
         this.state = state;
         this.user_no = user_no;
@@ -22,6 +23,7 @@ public class Estimate {
         this.brand_name = brand_name;
         this.note = note;
         this.use_yn = use_yn;
+        this.refuse_cnt = refuse_cnt;
     }
 
     public Estimate(Integer rstr_no, String state, String note) {
@@ -100,5 +102,13 @@ public class Estimate {
 
     public void setUser_no(Integer user_no) {
         this.user_no = user_no;
+    }
+
+    public Integer getRefuse_cnt() {
+        return refuse_cnt;
+    }
+
+    public void setRefuse_cnt(Integer refuse_cnt) {
+        this.refuse_cnt = refuse_cnt;
     }
 }
