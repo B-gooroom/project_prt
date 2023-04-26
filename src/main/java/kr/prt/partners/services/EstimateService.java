@@ -38,4 +38,8 @@ public class EstimateService {
         return estimateRepository.readEstimate(estimate_no);
     }
 
+    public Integer updateRefuse(Integer rstr_no) {
+        return estimateRepository.updateRefuse(rstr_no);
+    }
+
 }

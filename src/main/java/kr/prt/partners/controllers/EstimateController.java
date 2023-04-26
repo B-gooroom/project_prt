@@ -47,6 +47,13 @@ public class EstimateController {
         return new EstimateResponse(lists);
     }
 
+    @RequestMapping(path = "/estimate/refuse", method = RequestMethod.POST)
+    public EstimateResponse updateRefuse(Integer rstr_no) {
+        System.out.println(rstr_no);
+        estimateService.updateRefuse(rstr_no);
+        return new EstimateResponse("updateRefuse");
+    }
+
 //    @RequestMapping(path = "/estimate", method = RequestMethod.POST)
 //    public EstimateResponse create(Estimate estimate) {
 ////        estimateService.insert(rstr_no, state, note);

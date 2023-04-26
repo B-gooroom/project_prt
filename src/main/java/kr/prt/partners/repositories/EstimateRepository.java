@@ -20,4 +20,6 @@ public interface EstimateRepository {
     List<Suggest> readEstimateList();
 
     List<Suggest> readEstimate(Integer estimate_no);
+
+    Integer updateRefuse(@Param("rstr_no") Integer rstr_no);
 }

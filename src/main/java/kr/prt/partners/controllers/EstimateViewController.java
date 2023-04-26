@@ -78,4 +78,17 @@ public class EstimateViewController {
         model.addAttribute("suggestList", suggestList);
         return "/suggest/view";
     }
+
+    @GetMapping("/refuse/form")
+    public String updateRefuse() {
+        return "/refuse/form";
+    }
+
+    @RequestMapping("/refuse/new/{index}")
+    public String refuseForm(@RequestParam("rstr") Integer rstr_no, Model model) {
+        System.out.println(rstr_no);
+        estimateService.updateRefuse(rstr_no);
+        model.addAttribute("refuseNo", rstr_no);
+        return "/refuse/new";
+    }
 }

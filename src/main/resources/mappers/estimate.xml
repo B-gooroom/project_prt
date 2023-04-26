@@ -28,6 +28,11 @@
         FROM prtRestorationEstimate
         WHERE estimate_no = #{estimate_no}
     </select>
+    <update id="updateRefuse">
+        UPDATE prtRestoration
+        SET refuse_cnt = refuse_cnt + 1
+        WHERE rstr_no = ${rstr_no}
+    </update>
 </mapper>
 <!--TODO: (readEstimate) *로 받으면 register_time이 type 에러.. java.lang.Integer 어쩌구-->
 <!--        estimate_no, rstr_no, state, note, input_day, work_price, register_time-->
