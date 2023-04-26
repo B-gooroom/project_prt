@@ -25,8 +25,8 @@ public class EstimateService {
         return estimateRepository.readId(rstrNo);
     }
 
-    public Integer create(Integer rstr_no, String state, String note, Integer input_day, Integer price, Integer work_day) {
-        return estimateRepository.create(rstr_no, state, note, input_day, price, work_day);
+    public Integer create(Integer rstr_no, String state, Integer user_no, String note, Integer input_day, Integer price, Integer work_day) {
+        return estimateRepository.create(rstr_no, state, user_no, note, input_day, price, work_day);
     }
 
     public List<Suggest> readEstimateList() {

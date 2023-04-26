@@ -14,7 +14,7 @@ public interface EstimateRepository {
 
     List<Estimate> readId(Integer rstrNo);
 
-    Integer create(@Param("rstr_no") Integer rstr_no, @Param("state") String state, @Param("note") String note,
+    Integer create(@Param("rstr_no") Integer rstr_no, @Param("state") String state, @Param("user_no") Integer user_no, @Param("note") String note,
                    @Param("input_day") Integer input_day, @Param("price") Integer price, @Param("work_day") Integer work_day);
 
     List<Suggest> readEstimateList();

@@ -13,9 +13,9 @@ public class EstimateResponse {
         this.estimateList = estimateList;
     }
 
-//    public EstimateResponse(String result) {
-//        this.result = result;
-////        this.estimateList = estimateList;
-//    }
+    public EstimateResponse(String result) {
+        this.result = result;
+//        this.estimateList = estimateList;
+    }
 
 }
