@@ -3,12 +3,14 @@
 
 <mapper namespace="kr.prt.partners.repositories.RestorationRepository">
     <select id="read" resultType="Restoration">
-        select * from prtRestoration
+        SELECT *
+        FROM prtRestoration
+        WHERE use_yn = "Y"
     </select>
-    <!--    <insert id="create" parameterType="User">-->
-    <!--        insert into lwUser(user_id, user_name)-->
-    <!--        values(#{userId}, #{userName})-->
-    <!--    </insert>-->
+    <insert id="create" parameterType="Restoration">
+        INSERT INTO prtRestoration(category_top, category_base, brand_no, brand_name, note, state, use_yn, user_no)
+        VALUES (#{category_top}, #{category_base}, #{brand_no}, #{brand_name}, #{note}, "SRQE", "Y", #{id})
+    </insert>
     <!--    <delete id="delete" parameterType="Integer">-->
     <!--        delete from lwUser-->
     <!--        where user_no = #{userNo}-->

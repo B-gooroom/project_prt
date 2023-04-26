@@ -20,5 +20,9 @@ public class RestorationService {
     public List<Restoration> listResRead() {
         return restorationRepository.read();
     }
+
+    public Integer create(Integer category_top, Integer category_base, Integer brand_no, String brand_name, String note, Integer id) {
+        return restorationRepository.create(category_top, category_base, brand_no, brand_name, note, id);
+    }
 }
 

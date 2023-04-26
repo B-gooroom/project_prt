@@ -4,6 +4,7 @@ public class Estimate {
 
     private Integer rstr_no;
     private String state;
+    private Integer user_no;
     private Integer category_top;
     private Integer category_base;
     private Integer brand_no;
@@ -11,9 +12,10 @@ public class Estimate {
     private String note;
     private String use_yn;
 
-    public Estimate(Integer rstr_no, String state, Integer category_top, Integer category_base, Integer brand_no, String brand_name, String note, String use_yn) {
+    public Estimate(Integer rstr_no, String state, Integer user_no, Integer category_top, Integer category_base, Integer brand_no, String brand_name, String note, String use_yn) {
         this.rstr_no = rstr_no;
         this.state = state;
+        this.user_no = user_no;
         this.category_top = category_top;
         this.category_base = category_base;
         this.brand_no = brand_no;
@@ -90,5 +92,13 @@ public class Estimate {
 
     public void setUse_yn(String use_yn) {
         this.use_yn = use_yn;
+    }
+
+    public Integer getUser_no() {
+        return user_no;
+    }
+
+    public void setUser_no(Integer user_no) {
+        this.user_no = user_no;
     }
 }

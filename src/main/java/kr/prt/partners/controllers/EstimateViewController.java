@@ -38,6 +38,7 @@ public class EstimateViewController {
     public String EstimateForm(@RequestParam("rstr") Integer rstrNo, Model model) {
 //        System.out.println(rstrNo);
         List<Estimate> estimateId = estimateService.readId(rstrNo);
+//        System.out.println(estimateId.get(0).getUser_no());
         model.addAttribute("estimateId", estimateId);
         return "/estimate/new";
     }
@@ -52,7 +53,8 @@ public class EstimateViewController {
                                  @RequestParam("input_day") Integer input_day, @RequestParam("price") Integer price, Model model) {
         Integer work_day = input_day + 7;
         List<Estimate> lists = estimateService.readId(rstrNo);
-        estimateService.create(rstrNo, lists.get(0).getState(), note, input_day, price, work_day);
+//        System.out.println(lists.get(0).getUser_no());
+        estimateService.create(rstrNo, lists.get(0).getState(), lists.get(0).getUser_no(), note, input_day, price, work_day);
         model.addAttribute("estimateInsert", lists);
         return "/estimate/insertnew";
     }
@@ -75,5 +77,18 @@ public class EstimateViewController {
         List<Suggest> suggestList = estimateService.readEstimateList();
         model.addAttribute("suggestList", suggestList);
         return "/suggest/view";
+    }
+
+    @GetMapping("/refuse/form")
+    public String updateRefuse() {
+        return "/refuse/form";
+    }
+
+    @RequestMapping("/refuse/new/{index}")
+    public String refuseForm(@RequestParam("rstr") Integer rstr_no, Model model) {
+        System.out.println(rstr_no);
+        estimateService.updateRefuse(rstr_no);
+        model.addAttribute("refuseNo", rstr_no);
+        return "/refuse/new";
     }
 }

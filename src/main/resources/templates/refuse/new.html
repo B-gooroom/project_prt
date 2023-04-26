@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="'http://www.thymeleaf.org">
+<head>
+    <title>수선불가</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div>
+        <h3>refuse: 수선불가 등록</h3>
+        <p>form -> new</p>
+        <table>
+            <thead>
+            <tr>
+                <th>수선불가 수선번호 [update]</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="list : ${refuseNo}">
+                <td th:text="${list}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
