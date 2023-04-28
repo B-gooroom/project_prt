@@ -4,6 +4,15 @@
     <title>견적 조회</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+<style>
+    .content {
+        margin: 8px;
+    }
+    label {
+        display: inline-block;
+        width: 100px;
+    }
+</style>
 <body>
 <div class="container">
     <div>
@@ -11,18 +20,30 @@
         <div>
             <form action="/restoration/new/{index}" method="post">
                 <div class="form-group">
-                    <label for="category_top">수선</label>
-                    <input type="text" id="category_top" name="category_top" placeholder="200을 입력해주세요">
-                    <label for="category_base">카테고리</label>
-                    <input type="text" id="category_base" name="category_base" placeholder="가방은 201, 신발은 204">
-                    <label for="brand_no">브랜드선택</label>
-                    <input type="text" id="brand_no" name="brand_no" placeholder="브랜드 넘버">
-                    <label for="brand_name">브랜드명</label>
-                    <input type="text" id="brand_name" name="brand_name" placeholder="브랜드명">
-                    <label for="note">수선 요청사항</label>
-                    <input type="text" id="note" name="note" placeholder="수선 요청사항을 입력해주세요">
-                    <label for="id" style="display: none">수선 요청사항</label>
-                    <input type="text" id="id" name="id" style="display: none">
+                    <div class="content">
+                        <label for="category_top">수선</label>
+                        <input type="text" id="category_top" name="category_top" placeholder="200을 입력해주세요">
+                    </div>
+                    <div class="content">
+                        <label for="category_base">카테고리</label>
+                        <input type="text" id="category_base" name="category_base" placeholder="가방은 201, 신발은 204">
+                    </div>
+                    <div class="content">
+                        <label for="brand_no">브랜드선택</label>
+                        <input type="text" id="brand_no" name="brand_no" placeholder="브랜드 넘버">
+                    </div>
+                    <div class="content">
+                        <label for="brand_name">브랜드명</label>
+                        <input type="text" id="brand_name" name="brand_name" placeholder="브랜드명">
+                    </div>
+                    <div class="content">
+                        <label for="note">수선 요청사항</label>
+                        <input type="text" id="note" name="note" placeholder="수선 요청사항을 입력해주세요">
+                    </div>
+                    <div class="content">
+                        <label for="id" style="display: none">수선 요청사항</label>
+                        <input type="text" id="id" name="id" style="display: none">
+                    </div>
                 </div>
                 <button type="submit">등록</button>
             </form>

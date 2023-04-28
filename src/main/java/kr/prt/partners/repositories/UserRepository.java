@@ -13,12 +13,11 @@ public interface UserRepository {
 
     List<User> find(Integer userNo);
 
-    Integer create(User user);
+//    Integer create(User user);
+    Integer create(@Param("user_id") String user_id, @Param("user_name") String user_name, @Param("user_tel") String user_tel, @Param("user_email") String user_email);
 
     Integer delete(Integer userNo);
 
-//    Integer update(Integer userPk, String user_name);
-//    Integer update(Integer userPk, User user);
     Integer update(@Param("user_no") Integer userNo, @Param("user_name") String user_name);
 
 }

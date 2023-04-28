@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="'http://www.thymeleaf.org">
+<head>
+    <title>user 조회</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+    th {
+        background-color: grey;
+        color: #fff;
+        font-weight: 400;
+        padding: 8px;
+    }
+    td {
+        text-align: center;
+    }
+</style>
+<body>
+<div class="container">
+    <div>
+        <h3>user: 회원 조회{id}</h3>
+        <p>find/form -> find/new</p>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>아이디</th>
+                <th>이름</th>
+                <th>휴대폰 번호</th>
+                <th>이메일</th>
+                <th>우편번호</th>
+                <th>주소</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${userNo}">
+                <td th:text="${user.user_no}"></td>
+                <td th:text="${user.user_id}"></td>
+                <td th:text="${user.user_name}"></td>
+                <td th:text="${user.user_tel}"></td>
+                <td th:text="${user.user_email}"></td>
+                <td th:text="${user.post}"></td>
+                <td th:text="${user.user_addr}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

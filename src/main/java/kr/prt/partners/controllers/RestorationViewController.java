@@ -34,7 +34,7 @@ public class RestorationViewController {
 
     @GetMapping("/restoration/form")
     public String createForm() {
-        return "/restoration/form";
+        return "restoration/form";
     }
 
     @RequestMapping(path = "/restoration/new/{index}")
@@ -47,6 +47,6 @@ public class RestorationViewController {
 
         String notted = note;
         model.addAttribute("restorationCreate", notted);
-        return "/restoration/new";
+        return "restoration/new";
     }
 }
