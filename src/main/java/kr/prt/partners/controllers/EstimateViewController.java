@@ -22,16 +22,18 @@ public class EstimateViewController {
         this.estimateService = estimateService;
     }
 
+    // estimate 대기
     @GetMapping("/estimate/view")
     public String EstimateView(Model model) {
         List<Estimate> estimateList = estimateService.readList();
         model.addAttribute("estimateList", estimateList);
-        return "/estimate/view";
+        return "estimate/view";
     }
 
+    // estimate {id} 확인
     @GetMapping("/estimate/form")
     public String createForm() {
-        return "/estimate/form";
+        return "estimate/form";
     }
 
     @RequestMapping("/estimate/new/{index}")
@@ -40,12 +42,13 @@ public class EstimateViewController {
         List<Estimate> estimateId = estimateService.readId(rstrNo);
 //        System.out.println(estimateId.get(0).getUser_no());
         model.addAttribute("estimateId", estimateId);
-        return "/estimate/new";
+        return "estimate/new";
     }
 
+    // estimate 견적 제안
     @GetMapping("/estimate/insert")
     public String createInsert() {
-        return "/estimate/insert";
+        return "estimate/insert";
     }
 
     @RequestMapping("/estimate/insertnew/{index}")
@@ -56,12 +59,13 @@ public class EstimateViewController {
 //        System.out.println(lists.get(0).getUser_no());
         estimateService.create(rstrNo, lists.get(0).getState(), lists.get(0).getUser_no(), note, input_day, price, work_day);
         model.addAttribute("estimateInsert", lists);
-        return "/estimate/insertnew";
+        return "estimate/insertnew";
     }
 
+    // 제안한 견적 {id} 확인
     @GetMapping("/estimate/suggestForm")
     public String readEsti() {
-        return "/estimate/suggestForm";
+        return "estimate/suggestForm";
     }
 
     @RequestMapping("/estimate/suggest/{index}")
@@ -69,19 +73,21 @@ public class EstimateViewController {
         System.out.println(estimate_no);
         List<Suggest> estimateNo = estimateService.readEstimate(estimate_no);
         model.addAttribute("estimateNo", estimateNo);
-        return "/estimate/suggest";
+        return "estimate/suggest";
     }
 
+    // 제안한 견적
     @GetMapping("/suggest/view")
     public String suggestView(Model model) {
         List<Suggest> suggestList = estimateService.readEstimateList();
         model.addAttribute("suggestList", suggestList);
-        return "/suggest/view";
+        return "suggest/view";
     }
 
+    // 견적 거절하기
     @GetMapping("/refuse/form")
     public String updateRefuse() {
-        return "/refuse/form";
+        return "refuse/form";
     }
 
     @RequestMapping("/refuse/new/{index}")
@@ -89,6 +95,6 @@ public class EstimateViewController {
         System.out.println(rstr_no);
         estimateService.updateRefuse(rstr_no);
         model.addAttribute("refuseNo", rstr_no);
-        return "/refuse/new";
+        return "refuse/new";
     }
 }
