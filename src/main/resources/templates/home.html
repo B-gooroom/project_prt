@@ -4,10 +4,31 @@
     <title>Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+<style>
+    a {
+        text-decoration: none;
+        color : black;
+    }
+    a:visited {
+        color : black;
+    }
+    .container {
+        display: flex;
+    }
+    .content {
+        width: 240px;
+        height: 500px
+        font-size: 15px;
+    }
+    .topic {
+        font-size: 14px;
+        color: orange;
+    }
+</style>
 <body>
-<div class="container" style="display: flex">
+<div class="container">
     <h3 style="width: 120px;">project prt</h3>
-    <div style="width: 200px; height: 500px">
+    <div class="content">
         <h4>view</h4>
         <p>
             <a href="/notice/view">notice view</a>
@@ -25,23 +46,35 @@
             <a href="/suggest/view">suggest view</a>
         </p>
     </div>
-    <div style="width: 300px; height: 500px">
+    <div class="content">
         <h4>form</h4>
-        <p>
-            <a href="/estimate/form">estimate 조회</a>
-        </p>
-        <p>
-            <a href="/estimate/insert">estimate 견적제안 생성(수선사)</a>
-        </p>
-        <p>
-            <a href="/estimate/suggestForm">estimate 제안한 견적 조회</a>
-        </p>
-        <p>
-            <a href="/restoration/form">restoration 견적 생성(고객)</a>
-        </p>
-        <p>
-            <a href="/refuse/form">estimate 수선불가 등록</a>
-        </p>
+        <div>
+            <p class="topic">고객용</p>
+            <p>
+                <a href="/user/form">user join(고객)</a>
+            </p>
+            <p>
+                <a href="/user/find/form">user 조회(고객)</a>
+            </p>
+            <p>
+                <a href="/restoration/form">restoration 견적 생성(고객)</a>
+            </p>
+        </div>
+        <div style="border-top: 1px solid">
+            <p class="topic">파트너사</p>
+            <p>
+                <a href="/estimate/form">estimate 조회</a>
+            </p>
+            <p>
+                <a href="/estimate/insert">estimate 견적제안 생성(수선사)</a>
+            </p>
+            <p>
+                <a href="/estimate/suggestForm">estimate 제안한 견적 조회</a>
+            </p>
+            <p>
+                <a href="/refuse/form">estimate 수선불가 등록</a>
+            </p>
+        </div>
     </div>
 </div>
 </body>
