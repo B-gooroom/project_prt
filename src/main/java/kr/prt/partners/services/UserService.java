@@ -25,10 +25,13 @@ public class UserService {
         return userRepository.find(userNo);
     }
 
-    public Integer create(User user) {
-        return userRepository.create(user);
-    }
+//    public Integer create(User user) {
+//        return userRepository.create(user);
+//    }
 
+    public Integer create(String user_id, String user_name, String user_tel, String user_email) {
+        return userRepository.create(user_id, user_name, user_tel, user_email);
+    }
     public Integer delete(Integer userNo) {
         return userRepository.delete(userNo);
     }

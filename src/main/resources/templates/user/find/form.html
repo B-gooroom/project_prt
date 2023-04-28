@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="'http://www.thymeleaf.org">
+<head>
+    <title>회원조회{id}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+    .content {
+        margin: 8px;
+    }
+    label {
+        display: inline-block;
+        width: 60px;
+    }
+</style>
+<body>
+<div class="container">
+    <div>
+        <h3>user 조회 {no}</h3>
+        <div>
+            <form action="/user/find/new/{no}" method="post">
+                <div class="form-group">
+                    <div class="content">
+                        <label for="user_no">현재 id</label>
+                        <input type="text" id="user_no" name="user_no" placeholder="user 넘버">
+                    </div>
+                </div>
+                <button type="submit" id="click">조회</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script th:inline="javascript">
+
+    const id = localStorage.getItem("id");
+    // console.log('idid', id);
+    document.getElementById("user_no").value = id;
+
+    function findId() {
+        document.getElementById("click").click();
+    }
+    findId();
+</script>
+</html>

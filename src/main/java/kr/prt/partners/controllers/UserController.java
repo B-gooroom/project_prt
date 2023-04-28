@@ -22,14 +22,15 @@ public class UserController {
         this.userService = userService;
     }
 
+    // user 확인
     @RequestMapping(path = "/user", method = RequestMethod.GET)
     public UserResponse users() {
         List<User> users = userService.userRead();
-//        List<User> users = userRepository.read();
-        System.out.println(users);
+//        System.out.println(users);
         return new UserResponse("read", users);
     }
 
+    // user {id} 확인
     @RequestMapping(path = "/user/{index}", method = RequestMethod.GET)
     public UserResponse find(Integer userNo) {
         List<User> find = userService.find(userNo);
@@ -38,20 +39,28 @@ public class UserController {
 //        return new UserResponse("find", userNo);
     }
 
+    // user create (회원가입)
+//    @RequestMapping(path = "/user", method = RequestMethod.POST)
+//    public UserResponse create(User user) {
+//        userService.create(user);
+////        userRepository.create(user);
+//        return new UserResponse("create");
+//    }
     @RequestMapping(path = "/user", method = RequestMethod.POST)
-    public UserResponse create(User user) {
-        userService.create(user);
-//        userRepository.create(user);
+    public UserResponse create(String user_id, String user_name, String user_tel, String user_email) {
+        System.out.println(user_email);
+        userService.create(user_id, user_name, user_tel, user_email);
         return new UserResponse("create");
     }
 
+    // user delete (회원탈퇴)
     @RequestMapping(path = "/user/{index}", method = RequestMethod.DELETE)
     public UserResponse delete(@PathVariable("index") int index) {
         userService.delete(index);
-//        userRepository.delete(index);
         return new UserResponse("delete");
     }
 
+    // user 정보 변경
     @RequestMapping(path = "/user/{index}", method = RequestMethod.PATCH)
     public UserResponse update(
             @PathVariable("index") int index,

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="'http://www.thymeleaf.org">
+<head>
+    <title>user join</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div>
+        <h3>user: join</h3>
+        <p>form -> new</p>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>이름</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
