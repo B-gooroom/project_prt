@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="'http://www.thymeleaf.org">
+<head>
+    <title>인증번호</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div>
+        <h3>send: 인증번호</h3>
+        <div>
+            <form th:action="@{/user/certify/new}" method="post">
+
+                    <div class="form-group">
+                        <label for="to">발송번호</label>
+                        <input type="text" id="to" name="to" placeholder="발송번호 입력">
+                        <label for="content">내용</label>
+                        <input type="text" id="content" name="content" placeholder="보낼 내용을 입력하세요">
+                    </div>
+                <button type="submit">발송</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

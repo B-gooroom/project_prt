@@ -1,6 +1,7 @@
 package kr.prt.partners.controllers;
 
 import kr.prt.partners.models.Dashboard;
+import kr.prt.partners.models.DashboardResponse;
 import kr.prt.partners.services.DashboardSerivce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -50,18 +51,31 @@ public class DashboardController {
 //    }
 
     /**전체 count */
+//    @RequestMapping(path = "/dashboard", method = RequestMethod.GET)
+//    public Object Dashboard() {
+//        Map<String, Object> results = new HashMap<>();
+//        List<Dashboard> ongoing = dashboardSerivce.cntOngoing();
+//        List<Dashboard> notice = dashboardSerivce.cntNotice();
+//        List<Dashboard> notification = dashboardSerivce.cntNotification();
+//        List<Dashboard> restoration = dashboardSerivce.cntRestoration();
+//        results.put("notice", notice.get(0).getCount());
+//        results.put("notification", notification.get(0).getCount());
+//        results.put("restoration", restoration.get(0).getCount());
+//        results.put("ongoing", ongoing.get(0).getCount());
+//        System.out.println(results);
+//        return results;
+//    }
     @RequestMapping(path = "/dashboard", method = RequestMethod.GET)
-    public Object Dashboard() {
-        Map<String, Object> results = new HashMap<>();
+    public DashboardResponse Dashboard() {
         List<Dashboard> ongoing = dashboardSerivce.cntOngoing();
         List<Dashboard> notice = dashboardSerivce.cntNotice();
         List<Dashboard> notification = dashboardSerivce.cntNotification();
         List<Dashboard> restoration = dashboardSerivce.cntRestoration();
-        results.put("notice", notice.get(0).getCount());
-        results.put("notification", notification.get(0).getCount());
-        results.put("restoration", restoration.get(0).getCount());
-        results.put("ongoing", ongoing.get(0).getCount());
-        System.out.println(results);
-        return results;
+        return new DashboardResponse(
+                notice.get(0).getCount(),
+                notification.get(0).getCount(),
+                restoration.get(0).getCount(),
+                ongoing.get(0).getCount()
+        );
     }
 }
