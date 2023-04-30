@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="'http://www.thymeleaf.org">
+<head>
+    <title>user 조회</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+    th {
+        background-color: grey;
+        color: #fff;
+        font-weight: 400;
+        padding: 8px;
+    }
+    td {
+        text-align: center;
+    }
+</style>
+<body>
+<div class="container">
+    <div>
+        <h3>인증번호 response</h3>
+        <p>certify/form -> certify/new</p>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>시간</th>
+                <th>code</th>
+                <th>status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="res : ${response}">
+                <td th:text="${res.requestId}"></td>
+                <td th:text="${res.requestTime}"></td>
+                <td th:text="${res.statusCode}"></td>
+                <td th:text="${res.statusName}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
