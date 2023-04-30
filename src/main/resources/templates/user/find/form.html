@@ -38,7 +38,12 @@
     document.getElementById("user_no").value = id;
 
     function findId() {
-        document.getElementById("click").click();
+        if (id === null) {
+            alert('회원번호를 선택해주세요!')
+            location.replace("/user/view")
+        } else {
+            document.getElementById("click").click();
+        }
     }
     findId();
 </script>
