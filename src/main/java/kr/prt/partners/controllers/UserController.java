@@ -1,13 +1,12 @@
 package kr.prt.partners.controllers;
 
-import io.swagger.v3.oas.annotations.Parameter;
 import kr.prt.partners.models.User;
 import kr.prt.partners.models.UserResponse;
-import kr.prt.partners.repositories.UserRepository;
 import kr.prt.partners.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -73,4 +72,13 @@ public class UserController {
 //        userRepository.update(index, user.getUser_name());
         return new UserResponse("update");
     }
+
+    // mvc -> form 이나 axios 연결로 구현
+//    @RequestMapping(path = "/login/{index}", method = RequestMethod.GET)
+//    public UserResponse login(Integer userNo, HttpServletRequest request) {
+//        List<User> find = userService.find(userNo);
+//        System.out.println(find);
+//        request.getSession().setAttribute("id", find.get(0).getUser_no());
+//        return new UserResponse("find", find);
+//    }
 }
