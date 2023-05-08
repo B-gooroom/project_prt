@@ -3,7 +3,8 @@
 
 <mapper namespace="kr.prt.partners.repositories.NoticeRepository">
     <select id="read" resultType="Notice">
-        select * from prtNotice
+        SELECT board_no, board_seq, subject, content
+        FROM prtNotice
     </select>
 <!--    <insert id="create" parameterType="User">-->
 <!--        insert into lwUser(user_id, user_name)-->

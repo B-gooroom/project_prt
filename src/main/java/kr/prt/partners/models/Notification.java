@@ -10,6 +10,12 @@ public class Notification {
     private String read_time;
     private String register_time;
 
+    public Notification(Integer noti_no, String noti_title, String noti_content) {
+        this.noti_no = noti_no;
+        this.noti_title = noti_title;
+        this.noti_content = noti_content;
+    }
+
     public Notification(Integer noti_no, String noti_type, String noti_title, String noti_content, String flag_read, String read_time, String register_time) {
         this.noti_no = noti_no;
         this.noti_type = noti_type;

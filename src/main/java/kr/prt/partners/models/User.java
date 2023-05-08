@@ -22,6 +22,12 @@ public class User {
 //    }
 
 
+    public User(Integer user_no, String user_id, String user_name) {
+        this.user_no = user_no;
+        this.user_id = user_id;
+        this.user_name = user_name;
+    }
+
     public User(Integer user_no, String user_id, String user_name, String register_time, String user_tel, String user_email, String post, String user_addr, String user_addr_det) {
         this.user_no = user_no;
         this.user_id = user_id;

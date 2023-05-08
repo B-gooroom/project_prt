@@ -3,12 +3,12 @@
 
 <mapper namespace="kr.prt.partners.repositories.NotificationRepository">
     <select id="read" resultType="Notification">
-        SELECT *
+        SELECT noti_no, noti_title, noti_content
         FROM prtNotification
         WHERE flag_read = "Y"
     </select>
     <select id="unread" resultType="Notification">
-        SELECT *
+        SELECT noti_no, noti_title, noti_content
         FROM prtNotification
         WHERE flag_read = "N"
     </select>

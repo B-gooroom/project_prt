@@ -3,13 +3,13 @@
 
 <mapper namespace="kr.prt.partners.repositories.EstimateRepository">
     <select id="readList" resultType="Estimate">
-        SELECT *
+        SELECT rstr_no, category_top, category_base, brand_name, note
         FROM prtRestoration
         WHERE (state = "SRQE" OR state = "SRSE")
             AND use_yn = "Y"
     </select>
     <select id="readId" resultType="Estimate">
-        SELECT *
+        SELECT rstr_no, category_top, category_base, brand_name, note
         FROM prtRestoration
         WHERE rstr_no = #{rstr_no}
             AND use_yn = "Y"
