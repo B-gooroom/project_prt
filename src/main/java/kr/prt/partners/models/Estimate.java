@@ -13,6 +13,14 @@ public class Estimate {
     private String use_yn;
     private Integer refuse_cnt;
 
+    public Estimate(Integer rstr_no, Integer category_top, Integer category_base, String brand_name, String note) {
+        this.rstr_no = rstr_no;
+        this.category_top = category_top;
+        this.category_base = category_base;
+        this.brand_name = brand_name;
+        this.note = note;
+    }
+
     public Estimate(Integer rstr_no, String state, Integer user_no, Integer category_top, Integer category_base, Integer brand_no, String brand_name, String note, String use_yn, Integer refuse_cnt) {
         this.rstr_no = rstr_no;
         this.state = state;

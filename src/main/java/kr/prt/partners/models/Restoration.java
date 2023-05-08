@@ -11,6 +11,13 @@ public class Restoration {
     private String note;
     private String use_yn;
 
+    public Restoration(Integer rstr_no, String state, String brand_name, String note) {
+        this.rstr_no = rstr_no;
+        this.state = state;
+        this.brand_name = brand_name;
+        this.note = note;
+    }
+
     public Restoration(Integer rstr_no, String state, Integer category_top, Integer category_base, Integer brand_no, String brand_name, String note, String use_yn) {
         this.rstr_no = rstr_no;
         this.state = state;

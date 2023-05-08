@@ -3,22 +3,24 @@
 
 <mapper namespace="kr.prt.partners.repositories.DashboardRepository">
     <select id="restoration" resultType="Dashboard">
-        SELECT COUNT(*)
+        SELECT COUNT(rstr_no)
         FROM prtRestoration
         WHERE (state = "SRQE" OR state = "SRSE")
+            AND use_yn = "Y"
     </select>
     <select id="notification" resultType="Dashboard">
-        SELECT COUNT(*)
+        SELECT COUNT(noti_type)
         FROM prtNotification
         WHERE flag_read = "N"
     </select>
     <select id="notice" resultType="Dashboard">
-        SELECT COUNT(*)
+        SELECT COUNT(board_no)
         FROM prtNotice
     </select>
     <select id="ongoing" resultType="Dashboard">
-        SELECT COUNT(*)
+        SELECT COUNT(rstr_no)
         FROM prtRestoration
         WHERE state = "RSRS"
+            AND use_yn = "Y"
     </select>
 </mapper>

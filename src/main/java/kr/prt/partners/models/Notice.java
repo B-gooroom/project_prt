@@ -15,6 +15,13 @@ public class Notice {
         this.board_no = board_no;
     }
 
+    public Notice(Integer board_no, Integer board_seq, String subject, String content) {
+        this.board_no = board_no;
+        this.board_seq = board_seq;
+        this.subject = subject;
+        this.content = content;
+    }
+
     public Notice(Integer board_no, Integer board_seq, Integer board_cat, BigInteger num, String subject, String content) {
         this.board_no = board_no;
         this.board_seq = board_seq;

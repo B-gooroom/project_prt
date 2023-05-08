@@ -3,11 +3,12 @@
 
 <mapper namespace="kr.prt.partners.repositories.UserRepository">
     <select id="read" resultType="User">
-        SELECT *
+        SELECT user_no, user_id, user_name
         FROM prtUser
+        WHERE user_type = "CST"
     </select>
     <select id="find" resultType="User">
-        SELECT *
+        SELECT user_no, user_id, user_name, user_tel, user_email, post, user_addr
         FROM prtUser
         WHERE user_no = #{user_no}
     </select>

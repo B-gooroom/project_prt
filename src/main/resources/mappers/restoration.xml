@@ -3,7 +3,7 @@
 
 <mapper namespace="kr.prt.partners.repositories.RestorationRepository">
     <select id="read" resultType="Restoration">
-        SELECT *
+        SELECT rstr_no, state, brand_name, note
         FROM prtRestoration
         WHERE use_yn = "Y"
     </select>
